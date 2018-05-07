@@ -1,9 +1,9 @@
 {
-  "name": "react-static",
+  "name": "@stoplight/react-static",
   "description": "A progressive static site generator for React",
-  "version": "5.9.1",
+  "version": "5.9.2",
   "license": "MIT",
-  "repository": "https://github.com/nozzle/react-static",
+  "repository": "https://github.com/stoplightio/react-static",
   "main": "lib/index.js",
   "types": "src/index.d.ts",
   "engines": {
