@@ -62,7 +62,7 @@ ${templates
   const file = `
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
-import { cleanPath } from 'react-static'
+import { cleanPath } from '@stoplight/react-static'
 ${
     process.env.NODE_ENV === 'production'
       ? productionImports

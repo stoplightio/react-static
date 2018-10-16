@@ -1,4 +1,4 @@
-// Type definitions for react-static 5.1.7
+// Type definitions for @stoplight/react-static 5.1.7
 // Project: https://github.com/nozzle/react-static
 // Definitions for 4.0.1 by: D1no <https://github.com/D1no>
 // Updated to 5.1.7 by: Balvajs <https://github.com/Balvajs>
@@ -6,7 +6,7 @@
 
 /// <reference types="react" />
 
-declare module 'react-static' {
+declare module '@stoplight/react-static' {
   import * as React from 'react'
 
   // Passing on all react-router typings
