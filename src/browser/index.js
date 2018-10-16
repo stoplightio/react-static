@@ -1,7 +1,12 @@
 /* eslint-disable import/no-mutable-exports */
 
 import axios from 'axios'
-import { createPool, cleanPath, pathJoin } from '../utils/shared'
+import {
+  createPool,
+  cleanPath,
+  pathJoin,
+  makePathAbsolute,
+} from '../utils/shared'
 
 export const routeInfoByPath = {}
 export const propsByHash = {}
@@ -163,9 +168,11 @@ export async function prefetchData(path, { priority } = {}) {
           // If priority, get it immediately
           if (priority) {
             const { data: prop } = await axios.get(
-              pathJoin(
-                process.env.REACT_STATIC_ASSETS_PATH,
-                `staticData/${hash}.json`
+              makePathAbsolute(
+                pathJoin(
+                  process.env.REACT_STATIC_ASSETS_PATH,
+                  `staticData/${hash}.json`
+                )
               )
             )
             propsByHash[hash] = prop
@@ -174,9 +181,11 @@ export async function prefetchData(path, { priority } = {}) {
             if (!inflightPropHashes[hash]) {
               inflightPropHashes[hash] = requestPool.add(() =>
                 axios.get(
-                  pathJoin(
-                    process.env.REACT_STATIC_ASSETS_PATH,
-                    `staticData/${hash}.json`
+                  makePathAbsolute(
+                    pathJoin(
+                      process.env.REACT_STATIC_ASSETS_PATH,
+                      `staticData/${hash}.json`
+                    )
                   )
                 )
               )
